@@ -1,4 +1,10 @@
 import "./globals.css";
+import Login from "@/components/Login";
+import SessionProvider from "@/components/SessionProvider";
+import SideBar from "@/components/SideBar";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../pages/api/auth/[...nextauth]";
+import "./globals.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -7,6 +13,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const session = await getServerSession(authOptions);
+
+  console.log(session);
 
   return (
     <html lang="en">
