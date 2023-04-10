@@ -22,12 +22,12 @@ export default async function handler(req, res) {
 
   // Storing reply into a message object
   const message = {
-    text: response || "Chat was unable to find an answer for that!",
     createdAt: admin.firestore.Timestamp.now(),
+    text: response || "Chat was unable to find an answer for that!",
     user: {
       _id: "chat",
       name: "chat",
-      avatar: "",
+      avatar: "https://links.papareact.com/89k",
     },
   };
 

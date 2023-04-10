@@ -5,6 +5,7 @@ import { HumanChatMessage, SystemChatMessage } from "langchain/schema";
 export const openai = new OpenAI({
   openAIApiKey: process.env.OPENAI_API_KEY,
   temperature: 0,
+  modelName: "gpt-3.5-turbo",
 });
 
 export const openaiStream = new OpenAI({

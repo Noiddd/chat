@@ -8,8 +8,6 @@ const query = async (prompt, chatId) => {
         `Chat was unable to find an answer for that! (Error: ${err.message})`
     );
 
-  console.log(res);
-
   return res;
 };
 
