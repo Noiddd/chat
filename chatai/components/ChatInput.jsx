@@ -36,6 +36,7 @@ export default function ChatInput({ chatId }) {
       },
     };
 
+    // Add chat input into firebase
     await addDoc(
       collection(
         db,
@@ -48,9 +49,11 @@ export default function ChatInput({ chatId }) {
       message
     );
 
+    // Start loding toast
     const notification = toast.loading("Waiting for reply...");
 
-    await fetch("/api/askQuestions", {
+    // POST call to OPENAI API
+    await fetch("/api/askQuestion", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

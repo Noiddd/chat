@@ -1,4 +1,4 @@
-import openai from "./openAi";
+import { openai } from "./openAi";
 
 const query = async (prompt, chatId) => {
   const res = await openai
@@ -7,6 +7,7 @@ const query = async (prompt, chatId) => {
       (err) =>
         `Chat was unable to find an answer for that! (Error: ${err.message})`
     );
+
   console.log(res);
 
   return res;
