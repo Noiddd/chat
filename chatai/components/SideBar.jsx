@@ -24,8 +24,6 @@ export default function SideBar() {
       <div className="flex-1">
         <div>
           <NewChat />
-          <div>{/* modelselection */}</div>
-
           {chats?.docs.map((chat) => {
             return <ChatRow key={chat.id} id={chat.id} />;
           })}
