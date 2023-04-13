@@ -19,8 +19,6 @@ export default function NewChat() {
         createdAt: serverTimestamp(),
       }
     );
-
-    router.push(`chat/${doc.id}`);
   };
 
   return (

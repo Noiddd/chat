@@ -18,12 +18,12 @@ export default async function handler(req, res) {
 
   // Query into OPENAI API
   const response = await query(prompt, chatId);
-  console.log(response);
+  console.log(response.response);
 
   // Storing reply into a message object
   const message = {
     createdAt: admin.firestore.Timestamp.now(),
-    text: response || "Chat was unable to find an answer for that!",
+    text: response.response || "Chat was unable to find an answer for that!",
     user: {
       _id: "chat",
       name: "chat",
@@ -41,5 +41,5 @@ export default async function handler(req, res) {
     .add(message);
 
   // return reply message
-  res.status(200).json({ answer: message.text });
+  res.status(200).json({ answer: response.text });
 }

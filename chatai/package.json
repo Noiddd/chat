@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.17",
+    "cheerio": "^1.0.0-rc.12",
     "firebase": "^9.19.1",
     "firebase-admin": "^11.6.0",
     "langchain": "^0.0.51",
